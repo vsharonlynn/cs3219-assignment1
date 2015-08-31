@@ -1,11 +1,11 @@
 package model;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 
 public class Title {
 	
 	private String titleName;
-	private LinkedList<String> permutations;
+	private ArrayList<String> permutations;
 	
 	public Title(String name) {
 		this.setTitleName(name);
@@ -15,7 +15,7 @@ public class Title {
 		this.titleName = name;
 	}
 	
-	public void setPermutations(LinkedList<String> newPermutations) {
+	public void setPermutations(ArrayList<String> newPermutations) {
 		this.permutations = newPermutations;
 	}
 	
@@ -23,7 +23,7 @@ public class Title {
 		return this.titleName;
 	}
 	
-	public LinkedList<String> getPermutations() {
+	public ArrayList<String> getPermutations() {
 		return this.permutations;
 	}
 
