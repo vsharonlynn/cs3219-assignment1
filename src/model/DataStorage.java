@@ -6,7 +6,8 @@ import java.util.ArrayList;
 public class DataStorage {
 
 	private LinkedList<Title> titles;
-	private DataStorage activeStorage;
+	private ArrayList<String> ignoredWords;
+	private static DataStorage activeStorage = null;
 
 	/*
 	 * DataStorage is implemented as a Singleton. It is guaranteed that there
@@ -16,15 +17,23 @@ public class DataStorage {
 
 	private DataStorage() {
 		this.titles = new LinkedList<Title>();
+		this.ignoredWords = new ArrayList<String>();
 	}
 
-	public DataStorage getInstance() {
+	public static DataStorage getInstance() {
 		if (activeStorage == null) {
 			activeStorage = new DataStorage();
-			return activeStorage;
-		} else {
-			return activeStorage;
 		}
+
+		return activeStorage;
+	}
+	
+	public void addIgnoredWord(String word) {
+		ignoredWords.add(word);
+	}
+	
+	public ArrayList<String> getIgnoredWords(String word) {
+		return ignoredWords;
 	}
 
 	public void addTitle(String titleName) {
