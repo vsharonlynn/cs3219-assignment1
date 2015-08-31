@@ -7,11 +7,11 @@ import java.util.HashMap;
 public class DataStorage {
 
 	private LinkedList<Title> titles;
-	private HashMap<String, Title> titleMap; //for easy Title retrieval
-	
+	private HashMap<String, Title> titleMap; // for easy Title retrieval
+
 	private ArrayList<String> ignoredWords;
 	private static DataStorage activeStorage;
-	
+
 	private ArrayList<String> sortedPermutations;
 
 	/*
@@ -47,8 +47,6 @@ public class DataStorage {
 		titles.add(newTitle);
 		titleMap.put(titleName, newTitle);
 	}
-	
-	
 
 	public ArrayList<String> getPermutations(Title titleName) {
 		return titleName.getPermutations();
@@ -83,11 +81,11 @@ public class DataStorage {
 
 		return permutations;
 	}
-	
+
 	public void setSortedPermutations(ArrayList<String> sorted) {
 		this.sortedPermutations = sorted;
 	}
-	
+
 	public ArrayList<String> getSortedPermutations() {
 		return sortedPermutations;
 	}
