@@ -15,7 +15,7 @@ public class Shifter {
 	public Shifter() {
 		this.activeStorage = DataStorage.getInstance();
 		this.ignoredWords = new HashMap<String, Integer>();
-	
+
 	}
 
 	private void setIgnoredWords() {
@@ -63,7 +63,7 @@ public class Shifter {
 			s += " ";
 			toBeAdded += s;
 		}
-		
+
 		toBeAdded = capitalizeAndTrim(toBeAdded);
 		permutations.add(toBeAdded);
 	}
@@ -72,8 +72,6 @@ public class Shifter {
 		toBeAdded = toBeAdded.substring(0, 1).toUpperCase() + toBeAdded.substring(1).trim();
 		return toBeAdded;
 	}
-
-
 
 	private LinkedList<String> generateLinkedList(String s) {
 		String[] splitted = s.split(" ");
