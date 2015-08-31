@@ -11,6 +11,8 @@ public class DataStorage {
 	
 	private ArrayList<String> ignoredWords;
 	private static DataStorage activeStorage = null;
+	
+	private ArrayList<String> sortedPermutations;
 
 	/*
 	 * DataStorage is implemented as a Singleton. It is guaranteed that there
@@ -68,7 +70,7 @@ public class DataStorage {
 		return names;
 	}
 
-	public ArrayList<String> getAllPermutations() {
+	public ArrayList<String> getUnsortedPermutations() {
 		ArrayList<String> permutations = new ArrayList<String>();
 
 		for (Title t : titles) {
@@ -80,6 +82,14 @@ public class DataStorage {
 		}
 
 		return permutations;
+	}
+	
+	public void setSortedPermutations(ArrayList<String> sorted) {
+		this.sortedPermutations = sorted;
+	}
+	
+	public ArrayList<String> getSortedPermutations() {
+		return sortedPermutations;
 	}
 
 }
