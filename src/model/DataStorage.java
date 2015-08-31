@@ -2,10 +2,13 @@ package model;
 
 import java.util.LinkedList;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class DataStorage {
 
 	private LinkedList<Title> titles;
+	private HashMap<String, Title> titleMap; //for easy Title retrieval
+	
 	private ArrayList<String> ignoredWords;
 	private static DataStorage activeStorage = null;
 
@@ -18,6 +21,7 @@ public class DataStorage {
 	private DataStorage() {
 		this.titles = new LinkedList<Title>();
 		this.ignoredWords = new ArrayList<String>();
+		this.titleMap = new HashMap<String, Title>();
 	}
 
 	public static DataStorage getInstance() {
@@ -27,33 +31,48 @@ public class DataStorage {
 
 		return activeStorage;
 	}
-	
+
 	public void addIgnoredWord(String word) {
 		ignoredWords.add(word);
 	}
-	
-	public ArrayList<String> getIgnoredWords(String word) {
+
+	public ArrayList<String> getIgnoredWords() {
 		return ignoredWords;
 	}
 
 	public void addTitle(String titleName) {
 		Title newTitle = new Title(titleName);
 		titles.add(newTitle);
+		titleMap.put(titleName, newTitle);
 	}
+	
+	
 
-	public LinkedList<String> getPermutations(Title titleName) {
+	public ArrayList<String> getPermutations(Title titleName) {
 		return titleName.getPermutations();
 	}
 
-	public void setPermutations(Title titleName, LinkedList<String> permutations) {
-		titleName.setPermutations(permutations);
+	public void setPermutations(String titleName, ArrayList<String> permutations) {
+		Title curTitle = titleMap.get(titleName);
+		curTitle.setPermutations(permutations);
+	}
+
+	public ArrayList<String> getTitleNames() {
+		ArrayList<String> names = new ArrayList<String>();
+
+		for (Title t : titles) {
+			String curName = t.getTitleName();
+			names.add(curName);
+		}
+
+		return names;
 	}
 
 	public ArrayList<String> getAllPermutations() {
 		ArrayList<String> permutations = new ArrayList<String>();
 
 		for (Title t : titles) {
-			LinkedList<String> curPermutations = getPermutations(t);
+			ArrayList<String> curPermutations = getPermutations(t);
 
 			for (String s : curPermutations) {
 				permutations.add(s);
