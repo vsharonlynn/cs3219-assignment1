@@ -1,77 +1,34 @@
-
-import logic.TitleInput;
+import MasterController.Controller;
 
 import java.util.Scanner;
-import java.util.ArrayList;
-
-import logic.Shifter;
-import logic.Sorter;
-import logic.Output;
 
 public class Kwic {
 
 	Scanner sc = new Scanner(System.in);
 
-	private TitleInput input;
-	private Shifter shifter;
-	private Sorter sorter;
-	private Output output;
-
 	public Kwic() {
-		input = new TitleInput();
-		shifter = new Shifter();
-		sorter = new Sorter();
-		output = new Output();
+
 	}
 
 	public void run() {
-		System.out.print("How many ignored words? ");
-		int numOfIgnoredWords = readInteger();
+		System.out.println("Which architecture do you want to use?");
+		System.out.println("1. Shared Memory Architecture");
+		System.out.println("2. Pipe and Filter Architecture");
 
-		for (int i = 0; i < numOfIgnoredWords; i++) {
-			System.out.print("Enter Ignored Word #" + i + " = ");
-			String word = sc.nextLine();
-			addIgnoredWord(word);
+		System.out.print("Enter choice (1/2): ");
+		int choice = sc.nextInt();
+
+		if (choice == 1) {
+			System.out.println("You have chosen the Shared Memory Architecture");
+			Controller c = new Controller();
+			c.run();
+		} else {
+			// run Pipe and Filter version...
 		}
-
-		System.out.print("How many titles? ");
-		int numOfTitles = readInteger();
-
-		for (int i = 0; i < numOfTitles; i++) {
-			System.out.print("Enter Title #" + i + " = ");
-			String title = sc.nextLine();
-			addTitle(title);
-		}
-
-		System.out.println("===========================================");
-		System.out.println("Result: ");
-
-		shifter.shiftAndStore();
-		sorter.sort();
-
-		ArrayList<String> sorted = output.getSortedPermutations();
-		for (String s : sorted) {
-			System.out.println(s);
-		}
-
-	}
-
-	private int readInteger() {
-		int num = sc.nextInt();
-		sc.nextLine();
-		return num;
-	}
-
-	private void addIgnoredWord(String word) {
-		input.addIgnoredWord(word);
-	}
-
-	private void addTitle(String title) {
-		input.addTitle(title);
 	}
 
 	public static void main(String[] args) {
-		Kwic c = new Kwic();
-		c.run();
+		Kwic kwic = new Kwic();
+		kwic.run();
 	}
 }
