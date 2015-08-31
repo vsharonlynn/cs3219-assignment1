@@ -12,10 +12,10 @@ public class Sorter {
 
 	public Sorter() {
 		this.activeStorage = DataStorage.getInstance();
-		this.allPermutations = activeStorage.getUnsortedPermutations();
 	}
 
 	public void sort() {
+		this.allPermutations = activeStorage.getUnsortedPermutations();
 		Collections.sort(allPermutations);
 		activeStorage.setSortedPermutations(allPermutations);
 	}

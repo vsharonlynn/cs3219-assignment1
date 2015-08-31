@@ -10,10 +10,11 @@ public class Output {
 	
 	public Output() {
 		this.activeStorage = DataStorage.getInstance();
-		this.sortedPermutations = activeStorage.getSortedPermutations();
+		
 	}
 	
 	public ArrayList<String> getSortedPermutations() {
+		this.sortedPermutations = activeStorage.getSortedPermutations();
 		return sortedPermutations;
 	}
 }

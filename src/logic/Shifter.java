@@ -9,13 +9,13 @@ import java.util.HashMap;
 public class Shifter {
 
 	private DataStorage activeStorage;
-	private HashMap<String, Boolean> ignoredWords;
+	private HashMap<String, Integer> ignoredWords;
 	private ArrayList<String> titles;
 
 	public Shifter() {
 		this.activeStorage = DataStorage.getInstance();
-		this.titles = activeStorage.getTitleNames();
-		setIgnoredWords();
+		this.ignoredWords = new HashMap<String, Integer>();
+	
 	}
 
 	private void setIgnoredWords() {
@@ -23,11 +23,13 @@ public class Shifter {
 		ArrayList<String> ignoredWordsList = str.getIgnoredWords();
 
 		for (String s : ignoredWordsList) {
-			this.ignoredWords.put(s, true);
+			this.ignoredWords.put(s, 1);
 		}
 	}
 
 	public void shiftAndStore() {
+		this.titles = activeStorage.getTitleNames();
+		setIgnoredWords();
 		for (String s : titles) {
 			ArrayList<String> permutations = new ArrayList<String>();
 			permute(s, permutations);
@@ -58,10 +60,20 @@ public class Shifter {
 	private void addToList(LinkedList<String> words, ArrayList<String> permutations) {
 		String toBeAdded = "";
 		for (String s : words) {
+			s += " ";
 			toBeAdded += s;
 		}
+		
+		toBeAdded = capitalizeAndTrim(toBeAdded);
 		permutations.add(toBeAdded);
 	}
+
+	private String capitalizeAndTrim(String toBeAdded) {
+		toBeAdded = toBeAdded.substring(0, 1).toUpperCase() + toBeAdded.substring(1).trim();
+		return toBeAdded;
+	}
+
+
 
 	private LinkedList<String> generateLinkedList(String s) {
 		String[] splitted = s.split(" ");
