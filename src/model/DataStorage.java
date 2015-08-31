@@ -10,7 +10,7 @@ public class DataStorage {
 	private HashMap<String, Title> titleMap; //for easy Title retrieval
 	
 	private ArrayList<String> ignoredWords;
-	private static DataStorage activeStorage = null;
+	private static DataStorage activeStorage;
 	
 	private ArrayList<String> sortedPermutations;
 
