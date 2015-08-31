@@ -26,23 +26,26 @@ public class Controller {
 	}
 
 	public void run() {
-		System.out.println("How many ignored words?");
+		System.out.print("How many ignored words? ");
 		int numOfIgnoredWords = readInteger();
 
 		for (int i = 0; i < numOfIgnoredWords; i++) {
+			System.out.print("Enter Ignored Word #" + (i+1) + " = ");
 			String word = sc.nextLine();
 			addIgnoredWord(word);
 		}
 
-		System.out.println("How many titles?");
+		System.out.print("How many titles? ");
 		int numOfTitles = readInteger();
 
 		for (int i = 0; i < numOfTitles; i++) {
+			System.out.print("Enter Title #" + (i+1) + " = ");
 			String title = sc.nextLine();
 			addTitle(title);
 		}
 
-		System.out.println("____________________________");
+		System.out.println("===========================================");
+		System.out.println("Result: ");
 
 		shifter.shiftAndStore();
 		sorter.sort();
@@ -68,8 +71,4 @@ public class Controller {
 		input.addTitle(title);
 	}
 
-	public static void main() {
-		Controller c = new Controller();
-		c.run();
-	}
 }
