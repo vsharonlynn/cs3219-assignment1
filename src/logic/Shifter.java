@@ -37,11 +37,14 @@ public class Shifter {
 
 	private void permute(String s, ArrayList<String> permutations) {
 		LinkedList<String> words = generateLinkedList(s);
+
 		for (int i = 0; i < words.size(); i++) {
 			String firstWord = words.get(0);
+
 			if (!ignoredWords.containsKey(firstWord)) {
 				addToList(words, permutations);
 			}
+
 			circulate(words);
 		}
 
