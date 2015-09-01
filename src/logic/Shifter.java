@@ -43,7 +43,7 @@ public class Shifter {
 		for (int i = 0; i < words.size(); i++) {
 			String firstWord = words.get(0);
 
-			if (!ignoredWords.containsKey(firstWord)) {
+			if (!ignoredWords.containsKey(firstWord.toLowerCase())) {
 				addToList(words, permutations);
 			}
 
