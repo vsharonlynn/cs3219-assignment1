@@ -19,12 +19,9 @@ public class Output {
 
 	public void processOutput() {
 		this.setSortedPermutations();
-
 		System.out.println("\nResult: ");
 		System.out.println(DIVIDER);
-
 		printAllPermutations();
-
 		System.out.println(DIVIDER);
 	}
 

@@ -15,21 +15,27 @@ public class Shifter {
 	public Shifter() {
 		this.activeStorage = DataStorage.getInstance();
 		this.ignoredWords = new HashMap<String, Integer>();
-
-	}
-
-	private void setIgnoredWords() {
-		DataStorage str = activeStorage;
-		ArrayList<String> ignoredWordsList = str.getIgnoredWords();
-
-		for (String s : ignoredWordsList) {
-			this.ignoredWords.put(s, 1);
-		}
 	}
 
 	public void shiftAndStore() {
 		this.titles = activeStorage.getTitleNames();
 		setIgnoredWords();
+		permuteAndStore();
+	}
+
+	private void setIgnoredWords() {
+		DataStorage str = activeStorage;
+		ArrayList<String> ignoredWordsList = str.getIgnoredWords();
+		storeIgnoredWords(ignoredWordsList);
+	}
+
+	private void storeIgnoredWords(ArrayList<String> ignoredWordsList) {
+		for (String s : ignoredWordsList) {
+			this.ignoredWords.put(s, 1);
+		}
+	}
+
+	private void permuteAndStore() {
 		for (String s : titles) {
 			ArrayList<String> permutations = new ArrayList<String>();
 			permute(s, permutations);

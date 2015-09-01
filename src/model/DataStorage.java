@@ -30,7 +30,6 @@ public class DataStorage {
 		if (activeStorage == null) {
 			activeStorage = new DataStorage();
 		}
-
 		return activeStorage;
 	}
 
@@ -59,13 +58,15 @@ public class DataStorage {
 
 	public ArrayList<String> getTitleNames() {
 		ArrayList<String> names = new ArrayList<String>();
+		addNamesToList(names);
+		return names;
+	}
 
+	private void addNamesToList(ArrayList<String> names) {
 		for (Title t : titles) {
 			String curName = t.getTitleName();
 			names.add(curName);
 		}
-
-		return names;
 	}
 
 	public ArrayList<String> getUnsortedPermutations() {
