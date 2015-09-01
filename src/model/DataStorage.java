@@ -1,12 +1,11 @@
 package model;
 
-import java.util.LinkedList;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class DataStorage {
 
-	private LinkedList<Title> titles;
+	private ArrayList<Title> titles;
 	private HashMap<String, Title> titleMap; // for easy Title retrieval
 
 	private ArrayList<String> ignoredWords;
@@ -21,7 +20,7 @@ public class DataStorage {
 	 */
 
 	private DataStorage() {
-		this.titles = new LinkedList<Title>();
+		this.titles = new ArrayList<Title>();
 		this.ignoredWords = new ArrayList<String>();
 		this.titleMap = new HashMap<String, Title>();
 	}
