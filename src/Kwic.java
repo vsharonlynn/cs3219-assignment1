@@ -19,7 +19,7 @@ public class Kwic {
 		int choice = sc.nextInt();
 
 		if (choice == 1) {
-			System.out.println("You have chosen the Shared Memory Architecture");
+			System.out.println("\nYou have chosen the Shared Memory Architecture\n");
 			Controller c = new Controller();
 			c.run();
 		} else {
