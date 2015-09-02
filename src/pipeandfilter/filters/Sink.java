@@ -10,8 +10,9 @@ public class Sink extends Filter {
 	
 	private void displayList(ArrayList<String> words) {
 		for (String word : words) {
-			//TODO capitalize the first word
-			System.out.println(word);
+			String token[] = word.split(" ", 2);
+			token[0] = token[0].toUpperCase();
+			System.out.println(String.join(" ", token));
 		}
 	}
 }
