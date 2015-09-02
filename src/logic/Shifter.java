@@ -75,8 +75,15 @@ public class Shifter {
 	}
 
 	private String capitalizeAndTrim(String toBeAdded) {
-		toBeAdded = toBeAdded.substring(0, 1).toUpperCase() + toBeAdded.substring(1).trim();
-		return toBeAdded;
+		String result = "";
+		String[] split = toBeAdded.split("");
+		result += split[0].toUpperCase();
+		
+		for (int i = 1; i < split.length; i++) {
+			result += split[i].toLowerCase();
+		}
+		
+		return result.trim();
 	}
 
 	private LinkedList<String> generateLinkedList(String s) {
