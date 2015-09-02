@@ -1,6 +1,7 @@
 package pipeandfilter.filters;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
+import commutil.StringComparator;
 
 public class Alphabetizer extends Filter{
 	ArrayList<String> titles = new ArrayList<String>();
@@ -17,15 +18,16 @@ public class Alphabetizer extends Filter{
 	}
 	
 	private ArrayList<String> sort() {
-		PriorityQueue<String> titlesPQ= new PriorityQueue<String>();
+		StringComparator comparator = new StringComparator();
+		PriorityQueue<String> titlesPQ = new PriorityQueue<String>(comparator);
 		
 		for (String title : titles) {
 			titlesPQ.add(title);
 		}
 		
 		ArrayList<String> sortedTitles = new ArrayList<String>();
-		for (String title : titlesPQ) {
-			sortedTitles.add(title);
+		while (!titlesPQ.isEmpty()) {
+			sortedTitles.add(titlesPQ.poll());
 		}
 		
 		return sortedTitles;

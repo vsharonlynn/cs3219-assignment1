@@ -18,7 +18,7 @@ public class Pump extends Filter {
 		ArrayList<String> titles = new ArrayList<String>();
 		while(scanner.hasNextLine()){
 			String str = scanner.nextLine();
-			str = str.trim().toLowerCase();
+			str = str.trim();
 			if (str.length() == 0) {
 				break;
 			}
