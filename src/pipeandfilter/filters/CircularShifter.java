@@ -10,7 +10,7 @@ public class CircularShifter extends Filter {
 		rawTitles = data.get(0);
 		
 		for (String title : rawTitles) {
-			circularShiftedTitles = circularShift(title);
+			circularShiftedTitles.addAll(circularShift(title));
 		}
 		
 		outPipe.addData(circularShiftedTitles);

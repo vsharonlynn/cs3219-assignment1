@@ -1,6 +1,7 @@
 import MasterController.Controller;
 
 import java.util.Scanner;
+import pipeandfilter.PipeAndFilter;
 
 public class Kwic {
 	Scanner sc = new Scanner(System.in);
@@ -22,7 +23,7 @@ public class Kwic {
 			Controller c = new Controller();
 			c.run();
 		} else {
-			// run Pipe and Filter version...
+			PipeAndFilter pipeandfilter = new PipeAndFilter();
 		}
 	}
 

@@ -4,7 +4,11 @@ import pipeandfilter.Pipe;
 
 public abstract class Filter implements Runnable {
 	protected Pipe outPipe;
-	protected ArrayList<ArrayList<String>> data;
+	protected ArrayList<ArrayList<String>> data = new ArrayList<ArrayList<String>>();
+	
+	public Filter() {
+		
+	}
 	
 	public void setOutputPipe(Pipe pipe) {
 		outPipe = pipe;

@@ -4,7 +4,10 @@ import pipeandfilter.filters.Filter;
 
 public class Pipe {
 	private Filter outFilter;
-	private ArrayList<ArrayList<String>> datas;
+	private ArrayList<ArrayList<String>> datas = new ArrayList<ArrayList<String>>();
+	
+	public Pipe() {
+	}
 	
 	public void setOutputFilter(Filter filter) {
 		outFilter = filter;

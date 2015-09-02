@@ -14,11 +14,11 @@ public class Pump extends Filter {
 	}
 	
 	private ArrayList<String> readTitles() {
-		System.out.println("Enter the list of titles, each title on a new line of itself:\n");
+		System.out.println("Enter the list of titles, each title on a new line of itself:");
 		ArrayList<String> titles = new ArrayList<String>();
 		while(scanner.hasNextLine()){
 			String str = scanner.nextLine();
-			str = str.trim();
+			str = str.trim().toLowerCase();
 			if (str.length() == 0) {
 				break;
 			}
@@ -28,11 +28,11 @@ public class Pump extends Filter {
 	}
 	
 	private ArrayList<String> readWordsToIgnore() {
-		System.out.println("Enter the words to ignore, each word on a new line of itself:\n");
+		System.out.println("Enter the words to ignore, each word on a new line of itself:");
 		ArrayList<String> wordsToIgnore = new ArrayList<String>();
 		while(scanner.hasNextLine()){
 			String str = scanner.nextLine();
-			str = str.trim();
+			str = str.trim().toLowerCase();
 			if (str.length() == 0) {
 				break;
 			}

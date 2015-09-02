@@ -19,10 +19,18 @@ public class WordsToIgnoreRemover extends Filter{
 	}
 	
 	private void removeWordsToIgnore() {
-		for (String title : titles) {
+		int idx = 0;
+		
+		while (titles.size() > 0) {
+			if (idx == titles.size()-1){
+				break;
+			}
+			String title = titles.get(idx);
 			String token[] = title.split(" ", 2);
-			if (wordsToIgnore.contains(token[0])) {
+			if (wordsToIgnore.contains(token[0].toLowerCase())) {
 				titles.remove(title);
+			} else {
+				idx += 1;
 			}
 		}
 	}
