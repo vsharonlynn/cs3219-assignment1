@@ -17,19 +17,19 @@ public class Title {
 		this.setTitleName(name);
 	}
 
-	public void setTitleName(String name) {
+	void setTitleName(String name) {
 		this.titleName = name;
 	}
 
-	public void setPermutations(ArrayList<String> newPermutations) {
+	void setPermutations(ArrayList<String> newPermutations) {
 		this.permutations = newPermutations;
 	}
 
-	public String getTitleName() {
+	String getTitleName() {
 		return this.titleName;
 	}
 
-	public ArrayList<String> getPermutations() {
+	ArrayList<String> getPermutations() {
 		return this.permutations;
 	}
 
