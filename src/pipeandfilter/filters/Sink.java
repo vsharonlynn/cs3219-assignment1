@@ -11,7 +11,7 @@ public class Sink extends Filter {
 	}
 	
 	private void displayList(ArrayList<String> words) {
-		System.out.println("The Key Word In Context index of the titles are:");
+		System.out.println("The Key Word In Context (KWIC) index of the titles are:");
 		
 		System.out.println(DIVIDER);
 		

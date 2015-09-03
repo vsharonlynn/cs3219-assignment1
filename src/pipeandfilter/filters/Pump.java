@@ -14,8 +14,9 @@ public class Pump extends Filter {
 	}
 	
 	private ArrayList<String> readTitles() {
-		System.out.println("Enter the titles, each on a new line of itself: (Enter an empty line to finish)");
+		System.out.println("Enter the titles. Enter an empty line to finish.");
 		ArrayList<String> titles = new ArrayList<String>();
+		System.out.print("Enter a title: ");
 		while(scanner.hasNextLine()){
 			String str = scanner.nextLine();
 			str = str.trim();
@@ -23,13 +24,17 @@ public class Pump extends Filter {
 				break;
 			}
 			titles.add(str);
+			
+			System.out.print("Enter a title: ");
 		}
+		System.out.println("\nTitles have been entered!\n");
 		return titles;
 	}
 	
 	private ArrayList<String> readWordsToIgnore() {
-		System.out.println("Enter the words to ignore, each on a new line of itself: (Enter an empty line to finish)");
+		System.out.println("Enter the words to ignore. Enter an empty line to finish.");
 		ArrayList<String> wordsToIgnore = new ArrayList<String>();
+		System.out.print("Enter a word to ignore: ");
 		while(scanner.hasNextLine()){
 			String str = scanner.nextLine();
 			str = str.trim().toLowerCase();
@@ -37,7 +42,9 @@ public class Pump extends Filter {
 				break;
 			}
 			wordsToIgnore.add(str);
+			System.out.print("Enter a word to ignore: ");
 		}
+		System.out.println("\nWords to ignore have been entered!\n");
 		return wordsToIgnore;
 	}
 }
