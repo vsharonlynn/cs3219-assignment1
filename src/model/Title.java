@@ -11,7 +11,7 @@ public class Title {
 	 * with ignored words.
 	 */
 	
-	private ArrayList<String> permutations;
+	private ArrayList<String> permutations = new ArrayList<String>();
 
 	public Title(String name) {
 		this.setTitleName(name);
