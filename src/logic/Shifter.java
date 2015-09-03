@@ -76,12 +76,11 @@ public class Shifter {
 
 	private String capitalizeAndTrim(String toBeAdded) {
 		String result = "";
-		String[] split = toBeAdded.split("");
-		result += split[0].toUpperCase();
+		String[] split = toBeAdded.split(" ", 2);
+		split[0] = split[0].toUpperCase();
+		split[1] = split[1].toLowerCase();
 		
-		for (int i = 1; i < split.length; i++) {
-			result += split[i].toLowerCase();
-		}
+		result = String.join(" ", split);
 		
 		return result.trim();
 	}

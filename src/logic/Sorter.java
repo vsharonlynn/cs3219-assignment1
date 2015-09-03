@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import model.DataStorage;
+import commutil.StringComparator;
 
 public class Sorter {
 
@@ -16,7 +17,8 @@ public class Sorter {
 
 	public void sort() {
 		this.allPermutations = activeStorage.getUnsortedPermutations();
-		Collections.sort(allPermutations);
+		StringComparator comparator = new StringComparator();
+		Collections.sort(allPermutations, comparator);
 		activeStorage.setSortedPermutations(allPermutations);
 	}
 
