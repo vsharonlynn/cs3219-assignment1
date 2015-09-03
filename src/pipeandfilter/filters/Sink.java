@@ -12,6 +12,7 @@ public class Sink extends Filter {
 		for (String word : words) {
 			String token[] = word.split(" ", 2);
 			token[0] = token[0].toUpperCase();
+			token[1] = token[1].toLowerCase();
 			System.out.println(String.join(" ", token));
 		}
 	}
