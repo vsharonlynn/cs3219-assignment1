@@ -26,6 +26,7 @@ public class Kwic {
 			c.run();
 		} else {
 			PipeAndFilter pipeandfilter = new PipeAndFilter();
+			pipeandfilter.run();
 		}
 	}
 
