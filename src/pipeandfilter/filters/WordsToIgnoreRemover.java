@@ -22,7 +22,7 @@ public class WordsToIgnoreRemover extends Filter{
 		int idx = 0;
 		
 		while (titles.size() > 0) {
-			if (idx == titles.size()-1){
+			if (idx == titles.size()){
 				break;
 			}
 			String title = titles.get(idx);
