@@ -28,6 +28,7 @@ public class TitleInput {
 
 	private void inputTitles() {
 		System.out.println("Enter the titles. Enter an empty line to finish.");
+		int numOfTitles = 0;
 		System.out.print("Enter a title: ");
 		while (sc.hasNextLine()) {
 			String title = sc.nextLine().trim();
@@ -35,15 +36,17 @@ public class TitleInput {
 				break;
 			}
 			addTitle(title);
+			numOfTitles += 1;
 			
 			System.out.print("Enter a title: ");
 		}
 		
-		System.out.println("\nTitles have been entered!\n");
+		System.out.println("\n" + numOfTitles + " titles have been entered!\n");
 	}
 
 	private void inputIgnoredWords() {
 		System.out.println("Enter the words to ignore. Enter an empty line to finish.");
+		int numOfWords = 0;
 		System.out.print("Enter a word to ignore: ");
 		while(sc.hasNextLine()) {
 			String word = sc.nextLine().trim().toLowerCase();
@@ -51,11 +54,12 @@ public class TitleInput {
 				break;
 			}
 			addIgnoredWord(word);
+			numOfWords += 1;
 			
 			System.out.print("Enter a word to ignore: ");
 		}
 		
-		System.out.println("\nWords to ignore have been entered!\n");
+		System.out.println("\n" + numOfWords + " words to ignore have been entered!\n");
 	}
 
 	private int readInteger() {

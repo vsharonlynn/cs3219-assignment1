@@ -27,7 +27,7 @@ public class Pump extends Filter {
 			
 			System.out.print("Enter a title: ");
 		}
-		System.out.println("\nTitles have been entered!\n");
+		System.out.println("\n" + titles.size() + " titles have been entered!\n");
 		return titles;
 	}
 	
@@ -44,7 +44,7 @@ public class Pump extends Filter {
 			wordsToIgnore.add(str);
 			System.out.print("Enter a word to ignore: ");
 		}
-		System.out.println("\nWords to ignore have been entered!\n");
+		System.out.println("\n" + wordsToIgnore.size() + " words to ignore have been entered!\n");
 		return wordsToIgnore;
 	}
 }
