@@ -7,8 +7,8 @@ public class Pump extends Filter {
 	
 	@Override
 	public void run() {
-		outPipe.addData(readTitles());
 		outPipe.addData(readWordsToIgnore());
+		outPipe.addData(readTitles());
 		
 		outPipe.close();
 	}
