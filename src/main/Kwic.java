@@ -25,6 +25,7 @@ public class Kwic {
 			Controller c = new Controller();
 			c.run();
 		} else {
+			System.out.println("\nYou have chosen the Pipe and Filter Architecture\n");
 			PipeAndFilter pipeandfilter = new PipeAndFilter();
 			pipeandfilter.run();
 		}

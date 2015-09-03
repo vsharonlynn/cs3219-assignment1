@@ -14,7 +14,7 @@ public class Pump extends Filter {
 	}
 	
 	private ArrayList<String> readTitles() {
-		System.out.println("\nEnter the titles, each on a new line of itself: (Enter an empty line to finish)");
+		System.out.println("Enter the titles, each on a new line of itself: (Enter an empty line to finish)");
 		ArrayList<String> titles = new ArrayList<String>();
 		while(scanner.hasNextLine()){
 			String str = scanner.nextLine();
