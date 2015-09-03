@@ -19,7 +19,7 @@ public class Output {
 
 	public void processOutput() {
 		this.setSortedPermutations();
-		System.out.println("\nResult: ");
+		System.out.println("The Key Word In Context (KWIC) index of the titles are:");
 		System.out.println(DIVIDER);
 		printAllPermutations();
 		System.out.println(DIVIDER);
@@ -27,7 +27,7 @@ public class Output {
 
 	private void printAllPermutations() {
 		for (int i = 1; i <= sortedPermutations.size(); i++) {
-			System.out.println("Permutation #" + i + " : " + sortedPermutations.get(i - 1));
+			System.out.println(sortedPermutations.get(i - 1));
 		}
 	}
 
