@@ -1,6 +1,8 @@
-import MasterController.Controller;
+package main;
 
 import java.util.Scanner;
+
+import mastercontroller.Controller;
 import pipeandfilter.PipeAndFilter;
 
 public class Kwic {
