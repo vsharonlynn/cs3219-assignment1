@@ -2,6 +2,7 @@ package logic;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.PriorityQueue;
 
 import model.DataStorage;
 import commutil.StringComparator;
@@ -18,7 +19,17 @@ public class Sorter {
 	public void sort() {
 		this.allPermutations = activeStorage.getUnsortedPermutations();
 		StringComparator comparator = new StringComparator();
-		Collections.sort(allPermutations, comparator);
+		PriorityQueue<String> titlesPQ = new PriorityQueue<String>(comparator);
+		
+		for (String title : allPermutations) {
+			titlesPQ.add(title);
+		}
+		
+		allPermutations.clear();
+		while (!titlesPQ.isEmpty()) {
+			allPermutations.add(titlesPQ.poll());
+		}
+		
 		activeStorage.setSortedPermutations(allPermutations);
 	}
 
